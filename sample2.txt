@@ -1,0 +1,6 @@
+a 1 TR
+b 1 HN
+c 1 MH
+d 1 NC
+e 1 RC
+f 5 SK
