@@ -1,0 +1,62 @@
+****************************************************
+Your name		    Xiangyuan Lian
+The class name		ER Hospital/Assignment 3
+The date			lianx@uoguelph.ca
+****************************************************
+
+
+************************
+Program Description
+**************************
+The program will contrast a group of patients seeing a GP versus a GP and a specialist.
+The program will automatically run the program with a GP or a GP and a specialist.
+
+************
+Compilation
+************
+ To compile this code:
+ run: make test
+
+ To compile the testing priority queue program:
+ run: make testQ
+
+  Detailed Make options:
+
+  make cppcheck runs the cppcheck option
+  make test compiles the main.c program with the library
+  make testQ compiles the testPQueue.c program with the library
+  make doxy creates the doxygen documentation in the docs subdirectory
+  make clean removes executable files
+
+****************************
+Known Limitations, Issues and Errors
+****************************
+
+ make cppcheck error: "resource leak: fpout".
+ make valgrind -v: no error reported
+
+ Priority Queue Time Complexity:
+ creatPQueue O(1)  : malloc memory for a priority queue structure and sets the function pointer. Constant time.
+ enQueue    O(logn): insert one node to the queue by using heapifyup().
+ deQueue    O(logn): remove one node from the queue with heapifydown().
+ peek       O(1)   : get the top data of the queue by using getMinOrMax().
+ destory    O(nlogn) : delete the queue by using deleteHeap() to go through the heap.
+ isEmpty    O(1)   : check the queue by looking at the length.
+
+ ******************************
+ Design
+ ******************************
+ The report shows the the order of patients were handled, also with their priority,
+ arrival time and wait time. By the end of each report, there also shows the average
+ waiting time of GP versus GP and a specilist.
+
+ Aging is used to prevent starvation. The priority of patient is upgraded by 1 for every
+ 60 mins until they see the doctor or reach the highest priority.
+
+*****************************
+Work Cited
+*****************************
+ 1.“Operating System | Starvation and Aging in Operating Systems.” GeeksforGeeks, 9 Feb. 2018,
+ www.geeksforgeeks.org/starvation-aging-operating-systems/.
+ 2. Revolvy, LLC. “‘Aging (Scheduling)" on Revolvy.com.” Trivia Quizzes,
+www.revolvy.com/main/index.php?s=Aging (scheduling).
